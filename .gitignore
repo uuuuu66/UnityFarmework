@@ -1,0 +1,4 @@
+# maven ignore
+UnityFarmework/Library/
+UnityFarmework/Temp/
+UnityFarmework/.vs/

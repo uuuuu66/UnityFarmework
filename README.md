@@ -1,1 +1,5 @@
 # UnityFarmework
+Command ：UI调用方法都用command便于维护
+BindableProperty：model层数据变动的同时做回调，减少模板代码
+Event：事件解耦
+IOC：引入IOC容器，字典结构，使整个项目不会开放太多全局的东西导致混乱，在需要的地方获取注册过的类
