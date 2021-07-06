@@ -10,19 +10,24 @@ public class IOCExample : MonoBehaviour
         //创建一个IOC容器
         var container = new IOCContainer();
         //注册一个蓝牙管理器的实例
-        container.Register(new BluetoothManager());
+        container.Register<IBluetoothManager>(new BluetoothManager());
         //根据类型获取蓝牙管理器的实例
-        var bluetoothManager = container.Get<BluetoothManager>();
+        var bluetoothManager = container.Get<IBluetoothManager>();
         //调用实例方法
-        bluetoothManager.Connet();
+        bluetoothManager.Connect();
     }
 
 }
 
-
-public class BluetoothManager
+public interface IBluetoothManager
 {
-    public void Connet()
+    void Connect();
+}
+
+
+public class BluetoothManager:IBluetoothManager
+{
+    public void Connect()
     {
         Debug.Log("蓝牙连接成功");
     }

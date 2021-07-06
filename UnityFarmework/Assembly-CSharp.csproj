@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Example\IOC\DIPExample.cs" />
      <Compile Include="Assets\Example\IOC\IOCExample.cs" />
      <Compile Include="Assets\Framework\BindableProperty\BindableProperty.cs" />
      <Compile Include="Assets\Framework\Command\ICommand.cs" />
