@@ -37,10 +37,18 @@ public class CounterViewController : MonoBehaviour
     }
 }
 
+public interface ICounterModel
+{
+    BindableProperty<int> Count
+    {
+        get;
+    }
+}
+
 public class CounterModel
 {
 
-    public  BindableProperty<int> Count = new BindableProperty<int>()
+    public BindableProperty<int> Count { get; } = new BindableProperty<int>()
     {
         Value = 0
     };
