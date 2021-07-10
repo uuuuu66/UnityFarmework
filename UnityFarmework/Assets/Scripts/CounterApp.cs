@@ -6,6 +6,7 @@ public class CounterApp : Architecture<CounterApp>
 {
     protected override void Init()
     {
-        Register (new CounterModel());
+        RegisterUtility<IStorage>(new PlayerPrefsStorage());
+        RegisterModel(new CounterModel());
     }
 }

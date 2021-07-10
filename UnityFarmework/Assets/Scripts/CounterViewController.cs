@@ -37,7 +37,7 @@ public class CounterViewController : MonoBehaviour
     }
 }
 
-public interface ICounterModel
+public interface ICounterModel:IModel
 {
     BindableProperty<int> Count
     {
@@ -45,11 +45,27 @@ public interface ICounterModel
     }
 }
 
-public class CounterModel
+public class CounterModel:ICounterModel
 {
+    public CounterModel()
+    {
+        
+    }
 
     public BindableProperty<int> Count { get; } = new BindableProperty<int>()
     {
         Value = 0
     };
+    public IArchitecture Architecture
+    {
+        get;
+        set;
+    }
+
+    public void Init()
+    {
+        var storage = Architecture.GetUtility<IStorage>();
+        Count.Value = PlayerPrefs.GetInt("COUNTER_COUNT", 0);
+        Count.OnValueChanged += count => { storage.SaveInt("COUNTER_COUNT", count); };
+    }
 }
