@@ -74,6 +74,7 @@
     <Compile Include="Assets\Framework\Command\ICommand.cs" />
     <Compile Include="Assets\Framework\Event\Event.cs" />
     <Compile Include="Assets\Framework\IOC\IOCContainer.cs" />
+    <Compile Include="Assets\Framework\Message\MsgDispatcher.cs" />
     <Compile Include="Assets\Scripts\AddCountCommand.cs" />
     <Compile Include="Assets\Scripts\CounterApp.cs" />
     <Compile Include="Assets\Scripts\CounterViewController.cs" />
